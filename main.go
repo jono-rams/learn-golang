@@ -3,41 +3,28 @@ package main
 import "fmt"
 
 func main() {
+	var age uint8 = 23;
+	name := "jono";
 	
-	// strings
-	const nameOne string = "mario";
-	var nameTwo = "luigi";
-	var nameThree string;
+	// Print
+	fmt.Print("Hello, ");
+	fmt.Print("world! \n");
+	fmt.Print("new line \n");
 
-	fmt.Println(nameOne, nameTwo, nameThree);
+	// Println
+	fmt.Println("Hey guys!");
+	fmt.Println("Later!");
+	fmt.Println("My age is", age, "and my name is", name);
 
-	nameTwo = "browser";
-	nameThree = "peach";
-	//nameOne = "hello";
+	// Printf
+	fmt.Printf("My age is %d and my name is %s\n", age, name);
+	fmt.Printf("My age is %d and my name is %q\n", age, name);
+	fmt.Printf("age is of type %T\n", age);
+	fmt.Printf("You scored %f ponints!\n", 225.55);
+	fmt.Printf("You scored %0.0f ponints!\n", 225.55);
 
-	fmt.Println(nameOne, nameTwo, nameThree);
-
-	namefour := "yoshi";
-	fmt.Println(namefour);
-
-	// ints
-	var ageOne int = 20;
-	var ageTwo = 30;
-	var ageThree int;
-	ageFour := 40;
-
-	fmt.Println(ageOne, ageTwo, ageThree, ageFour);
-
-	// bits & memory
-	// var numOne int8 = 25;
-	// var numTwo int8 = -128;
-	// var numThree uint = 25;
-
-	// floats
-	var scoreOne float32 = -90.98;
-	var scoreTwo float64 = 43282783.23840720238;
-	scoreThree := 21332121.3211123;
-
-	fmt.Println(scoreOne, scoreTwo, scoreThree);
+	// Sprintf (save formatted strings)
+	var str = fmt.Sprintf("My age is %v and my name is %v\n", age, name);
+	fmt.Println("the saved string is", str);
 
 }
