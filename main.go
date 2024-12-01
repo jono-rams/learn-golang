@@ -3,31 +3,34 @@ package main
 import "fmt"
 
 func main() {
-	// x := 0
+	age := 45;
 
-	// for x < 5 {
-	// 	fmt.Println("value of x is:", x);
-	// 	x++;
-	// }
+	fmt.Println(age <= 50);
+	fmt.Println(age >= 50);
+	fmt.Println(age == 45);
+	fmt.Println(age != 50);
 
-	// for i := 0; i < 5; i++ {
-	// 	fmt.Println("i:", i);
-	// }
-
-	names := []string{"yoshi", "mario", "peach", "bowser"}
-
-	// for i := 0; i < len(names); i++ {
-	// 	fmt.Printf("names[%d]: %s\n", i, names[i]);
-	// }
-
-	// for index, value := range names {
-	// 	fmt.Printf("names[%d]: %s\n", index, value);
-	// }
-
-	for _, value := range names {
-		fmt.Println(value);
-		value = "new string"
+	if age < 30 {
+		fmt.Println("age is less than 30")
+	} else if age < 40 {
+		fmt.Println("age is less than 40")
+	} else {
+		fmt.Println("age is greater than 40")
 	}
 
-	fmt.Println(names)
+	names := []string{"yoshi", "mario", "peach", "bowser", "luigi"}
+
+	for index, value := range names {
+		if index == 1 {
+			fmt.Println("continuing at pos", index)
+			continue
+		}
+		if index == 3 {
+			fmt.Println("breaking at pos", index)
+			break
+		}
+
+		fmt.Printf("the value at pos %d is %s\n", index, value)
+	}
+
 }
