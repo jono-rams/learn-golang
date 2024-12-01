@@ -3,28 +3,30 @@ package main
 import "fmt"
 
 func main() {
-	var age uint8 = 23;
-	name := "jono";
-	
-	// Print
-	fmt.Print("Hello, ");
-	fmt.Print("world! \n");
-	fmt.Print("new line \n");
+	// var ages [3]uint8 = [3]uint8{20, 25, 30};
+	var ages = [3]uint8{20, 25, 30};
 
-	// Println
-	fmt.Println("Hey guys!");
-	fmt.Println("Later!");
-	fmt.Println("My age is", age, "and my name is", name);
+	names := [4]string{"yoshi", "mario", "peach", "bowser"}
 
-	// Printf
-	fmt.Printf("My age is %d and my name is %s\n", age, name);
-	fmt.Printf("My age is %d and my name is %q\n", age, name);
-	fmt.Printf("age is of type %T\n", age);
-	fmt.Printf("You scored %f ponints!\n", 225.55);
-	fmt.Printf("You scored %0.0f ponints!\n", 225.55);
+	fmt.Println(ages, len(ages));
+	fmt.Println(names, len(names));
 
-	// Sprintf (save formatted strings)
-	var str = fmt.Sprintf("My age is %v and my name is %v\n", age, name);
-	fmt.Println("the saved string is", str);
+	names[1] = "luigi";
+	fmt.Println(names);
+
+	// slices (use arrays under the hood)
+	var scores = []int{100, 50, 60};
+	scores[2] = 25;
+	scores = append(scores, 85);
+	fmt.Println(scores, len(scores));
+
+	// slice ranges
+	rangeOne := names[1:3]; // inclusive of first but not second
+	rangeTwo := names[2:];
+	rangeThree := names[:3];
+	fmt.Println(rangeOne, rangeTwo, rangeThree);
+
+	rangeOne = append(rangeOne, "koopa");
+	fmt.Println(rangeOne);
 
 }
